@@ -9,10 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.Toast;
-
-import com.bumptech.glide.Glide;
 
 import in.compsgeek.javafy.tutorials.TutorialIntroduction;
 
@@ -25,7 +22,7 @@ import in.compsgeek.javafy.tutorials.TutorialIntroduction;
  * Use the {@link Tutorials#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tutorials extends Fragment {
+public class Tutorials extends Fragment implements View.OnClickListener {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -73,24 +70,25 @@ public class Tutorials extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         //return inflater.inflate(R.layout.fragment_tutorials, container, false);
-        View view = inflater.inflate(R.layout.fragment_tutorials,
-                container, false);
-        Button button = (Button) view.findViewById(R.id.button2);
-        button.setOnClickListener(new View.OnClickListener()
-        {
-            @Override
-            public void onClick(View v)
+        View view = inflater.inflate(R.layout.fragment_tutorials,container, false);
+
+        Button button1 = (Button) view.findViewById(R.id.introbtn1);
+            button1.setOnClickListener(new View.OnClickListener()
             {
-                // do something
-                Toast.makeText(getActivity(), "text", Toast.LENGTH_SHORT).show();
+                @Override
+                public void onClick(View v)
+                {
+                    Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
+                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                    startActivity(tutorial);
+                    //Toast.makeText(getActivity(), "Test for button", Toast.LENGTH_LONG).show();
+                }
+            });
 
-                Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
-                startActivity(tutorial);
-
-            }
-        });
         return view;
     }
+
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -114,6 +112,11 @@ public class Tutorials extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onClick(View view) {
+        
     }
 
     /**

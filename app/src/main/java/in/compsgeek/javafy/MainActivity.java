@@ -82,6 +82,21 @@ public class MainActivity extends AppCompatActivity {
 //                .diskCacheStrategy(DiskCacheStrategy.ALL)
 //                .into(imageView);
 
+//        Button button = (Button) findViewById(R.id.button2);
+//            button.setOnClickListener(new View.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(View v)
+//                {
+//                    // do something
+//
+//                    Intent i = new Intent(getApplicationContext(), TutorialIntroduction.class);
+//                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+//                    startActivity(tutorial);
+//
+//                }
+//            });
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -167,20 +182,20 @@ public class MainActivity extends AppCompatActivity {
                 return rootView;
             }
 
-            Button button = (Button) rootView.findViewById(R.id.button2);
-            button.setOnClickListener(new View.OnClickListener()
-            {
-                @Override
-                public void onClick(View v)
-                {
-                    // do something
-
-                    Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
-                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
-                    startActivity(tutorial);
-
-                }
-            });
+//            Button button = (Button) rootView.findViewById(R.id.button2);
+//            button.setOnClickListener(new View.OnClickListener()
+//            {
+//                @Override
+//                public void onClick(View v)
+//                {
+//                    // do something
+//
+//                    Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
+//                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+//                    startActivity(tutorial);
+//
+//                }
+//            });
 
             return rootView;
         }
