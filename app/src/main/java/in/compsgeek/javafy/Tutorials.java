@@ -9,7 +9,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
 import in.compsgeek.javafy.tutorials.TutorialIntroduction;
 
@@ -72,16 +76,20 @@ public class Tutorials extends Fragment implements View.OnClickListener {
         //return inflater.inflate(R.layout.fragment_tutorials, container, false);
         View view = inflater.inflate(R.layout.fragment_tutorials,container, false);
 
+
+
+
         Button button1 = (Button) view.findViewById(R.id.introbtn1);
-            button1.setOnClickListener(new View.OnClickListener()
-            {
+
+
+        button1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v)
                 {
                     Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
                     //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
                     startActivity(tutorial);
-                    //Toast.makeText(getActivity(), "Test for button", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getActivity(), "Test for button", Toast.LENGTH_LONG).show();
                 }
             });
 
@@ -116,8 +124,11 @@ public class Tutorials extends Fragment implements View.OnClickListener {
 
     @Override
     public void onClick(View view) {
-        
+
     }
+
+
+
 
     /**
      * This interface must be implemented by activities that contain this

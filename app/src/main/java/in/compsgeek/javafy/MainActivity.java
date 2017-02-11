@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.provider.MediaStore;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -35,7 +37,7 @@ import java.util.List;
 
 import in.compsgeek.javafy.tutorials.TutorialIntroduction;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Tutorials.OnFragmentInteractionListener,Programs.OnFragmentInteractionListener,Videos.OnFragmentInteractionListener,Qna.OnFragmentInteractionListener,Interviews.OnFragmentInteractionListener,Misc.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -82,21 +84,6 @@ public class MainActivity extends AppCompatActivity {
 //                .diskCacheStrategy(DiskCacheStrategy.ALL)
 //                .into(imageView);
 
-//        Button button = (Button) findViewById(R.id.button2);
-//            button.setOnClickListener(new View.OnClickListener()
-//            {
-//                @Override
-//                public void onClick(View v)
-//                {
-//                    // do something
-//
-//                    Intent i = new Intent(getApplicationContext(), TutorialIntroduction.class);
-//                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
-//                    startActivity(tutorial);
-//
-//                }
-//            });
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,6 +119,11 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -161,26 +153,26 @@ public class MainActivity extends AppCompatActivity {
         public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-                rootView = inflater.inflate(R.layout.fragment_tutorials, container, false);
-
-                return rootView;
-            } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
-                rootView = inflater.inflate(R.layout.fragment_programs, container, false);
-                return rootView;
-            } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
-                rootView = inflater.inflate(R.layout.fragment_videos, container, false);
-                return rootView;
-            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-                rootView = inflater.inflate(R.layout.fragment_qna, container, false);
-                return rootView;
-            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
-                rootView = inflater.inflate(R.layout.fragment_interviews, container, false);
-                return rootView;
-            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-                rootView = inflater.inflate(R.layout.fragment_misc, container, false);
-                return rootView;
-            }
+//            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
+//                rootView = inflater.inflate(R.layout.fragment_tutorials, container, false);
+//
+//                return rootView;
+//            } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
+//                rootView = inflater.inflate(R.layout.fragment_programs, container, false);
+//                return rootView;
+//            } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
+//                rootView = inflater.inflate(R.layout.fragment_videos, container, false);
+//                return rootView;
+//            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
+//                rootView = inflater.inflate(R.layout.fragment_qna, container, false);
+//                return rootView;
+//            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
+//                rootView = inflater.inflate(R.layout.fragment_interviews, container, false);
+//                return rootView;
+//            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
+//                rootView = inflater.inflate(R.layout.fragment_misc, container, false);
+//                return rootView;
+//            }
 
 //            Button button = (Button) rootView.findViewById(R.id.button2);
 //            button.setOnClickListener(new View.OnClickListener()
@@ -214,8 +206,52 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
+            switch (position) {
+                case 0:
+                    return new Tutorials();
+                case 1:
+                    return new Programs();
+                case 2:
+                    return new Videos();
+                case 3:
+                    return new Qna();
+                case 4:
+                    return new Interviews();
+                case 5:
+                    return new Misc();
+                default:
+                    // This should never happen. Always account for each position above
+                    return null;
+            }
+
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            //return PlaceholderFragment.newInstance(position + 1);
+        }
+        @Override
+        public Object instantiateItem(ViewGroup container, int position) {
+            Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
+            // save the appropriate reference depending on position
+            switch (position) {
+                case 0:
+                    Tutorials tutorials = (Tutorials) createdFragment;
+                    break;
+                case 1:
+                    Programs programs = (Programs) createdFragment;
+                    break;
+                case 2:
+                    Videos videos = (Videos) createdFragment;
+                    break;
+                case 3:
+                    Qna qna = (Qna) createdFragment;
+                    break;
+                case 4:
+                    Interviews interviews = (Interviews) createdFragment;
+                    break;
+                case 5:
+                    Misc misc = (Misc) createdFragment;
+                    break;
+            }
+            return createdFragment;
         }
 
         @Override
@@ -242,5 +278,7 @@ public class MainActivity extends AppCompatActivity {
             }
             return null;
         }
+
+
     }
 }
