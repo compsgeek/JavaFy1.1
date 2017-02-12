@@ -1,5 +1,7 @@
 package in.compsgeek.javafy.tutorials;
 
+import android.net.Uri;
+import android.provider.ContactsContract;
 import android.support.design.widget.TabLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,8 +22,16 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import in.compsgeek.javafy.R;
+import in.compsgeek.javafy.tutorials.intro.Environment;
+import in.compsgeek.javafy.tutorials.intro.Features;
+import in.compsgeek.javafy.tutorials.intro.Fundamentals;
+import in.compsgeek.javafy.tutorials.intro.JRE;
+import in.compsgeek.javafy.tutorials.intro.UnderstandCode;
+import in.compsgeek.javafy.tutorials.intro.Versions;
+import in.compsgeek.javafy.tutorials.intro.WritingCode;
+import in.compsgeek.javafy.tutorials.intro.history;
 
-public class TutorialIntroduction extends AppCompatActivity {
+public class TutorialIntroduction extends AppCompatActivity implements history.OnFragmentInteractionListener,Fundamentals.OnFragmentInteractionListener,Features.OnFragmentInteractionListener,Environment.OnFragmentInteractionListener,JRE.OnFragmentInteractionListener,UnderstandCode.OnFragmentInteractionListener,Versions.OnFragmentInteractionListener,WritingCode.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -92,6 +102,11 @@ public class TutorialIntroduction extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
     /**
      * A placeholder fragment containing a simple view.
      */
@@ -141,12 +156,32 @@ public class TutorialIntroduction extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    return new history();
+                case 1:
+                    return new Features();
+                case 2:
+                    return new Environment();
+                case 3:
+                    return new JRE();
+                case 4:
+                    return new Versions();
+                case 5:
+                    return new WritingCode();
+                case 6:
+                    return new UnderstandCode();
+                case 7:
+                    return new Fundamentals();
+                default:
+                    // This should never happen. Always account for each position above
+                    return null;
+            }
         }
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 8 total pages.
             return 8;
         }
 

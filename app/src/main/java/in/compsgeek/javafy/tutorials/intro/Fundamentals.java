@@ -1,32 +1,24 @@
-package in.compsgeek.javafy;
+package in.compsgeek.javafy.tutorials.intro;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
-
-import in.compsgeek.javafy.tutorials.TutorialIntroduction;
-
+import in.compsgeek.javafy.R;
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Tutorials.OnFragmentInteractionListener} interface
+ * {@link Fundamentals.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Tutorials#newInstance} factory method to
+ * Use the {@link Fundamentals#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Tutorials extends Fragment implements View.OnClickListener {
+public class Fundamentals extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -38,7 +30,7 @@ public class Tutorials extends Fragment implements View.OnClickListener {
 
     private OnFragmentInteractionListener mListener;
 
-    public Tutorials() {
+    public Fundamentals() {
         // Required empty public constructor
     }
 
@@ -48,11 +40,11 @@ public class Tutorials extends Fragment implements View.OnClickListener {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Tutorials.
+     * @return A new instance of fragment Fundamentals.
      */
     // TODO: Rename and change types and number of parameters
-    public static Tutorials newInstance(String param1, String param2) {
-        Tutorials fragment = new Tutorials();
+    public static Fundamentals newInstance(String param1, String param2) {
+        Fundamentals fragment = new Fundamentals();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -73,37 +65,8 @@ public class Tutorials extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        //return inflater.inflate(R.layout.fragment_tutorials, container, false);
-        View view = inflater.inflate(R.layout.fragment_tutorials,container, false);
-
-
-        ImageView imageView = (ImageView) view.findViewById(R.id.Intro);
-
-        Glide.with(this).load("https://unsplash.it/200/300/?blur")
-                .thumbnail(0.5f)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imageView);
-
-
-        Button button1 = (Button) view.findViewById(R.id.introbtn1);
-
-
-        button1.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v)
-                {
-                    Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
-                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
-                    startActivity(tutorial);
-                    Toast.makeText(getActivity(), "Test for button", Toast.LENGTH_LONG).show();
-                }
-            });
-
-        return view;
+        return inflater.inflate(R.layout.fragment_fundamentals, container, false);
     }
-
-
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
@@ -128,14 +91,6 @@ public class Tutorials extends Fragment implements View.OnClickListener {
         super.onDetach();
         mListener = null;
     }
-
-    @Override
-    public void onClick(View view) {
-
-    }
-
-
-
 
     /**
      * This interface must be implemented by activities that contain this
