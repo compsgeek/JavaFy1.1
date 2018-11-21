@@ -3,6 +3,7 @@ package in.compsgeek.javafy;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -15,7 +16,10 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 
+import in.compsgeek.javafy.tutorials.TutorialClassesNObjects;
+import in.compsgeek.javafy.tutorials.TutorialCtrlStmts;
 import in.compsgeek.javafy.tutorials.TutorialIntroduction;
+import in.compsgeek.javafy.tutorials.TutorialOperators;
 
 
 /**
@@ -77,33 +81,314 @@ public class Tutorials extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_tutorials,container, false);
 
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.Intro);
+        ImageView imageView1 = (ImageView) view.findViewById(R.id.Intro);
+        ImageView imageView2 = (ImageView) view.findViewById(R.id.operators);
+        ImageView imageView3 = (ImageView) view.findViewById(R.id.ctrlstmt);
+        ImageView imageView4 = (ImageView) view.findViewById(R.id.classes);
+        ImageView imageView5 = (ImageView) view.findViewById(R.id.arrays);
+        ImageView imageView6 = (ImageView) view.findViewById(R.id.strings);
+        ImageView imageView7 = (ImageView) view.findViewById(R.id.inheritance);
+        ImageView imageView8 = (ImageView) view.findViewById(R.id.abs_interface);
+        ImageView imageView9 = (ImageView) view.findViewById(R.id.pkg_jar);
+        ImageView imageView10 = (ImageView) view.findViewById(R.id.exc_assert);
+        ImageView imageView11 = (ImageView) view.findViewById(R.id.fundamentals);
+        ImageView imageView12 = (ImageView) view.findViewById(R.id.adv_java);
+        ImageView imageView13 = (ImageView) view.findViewById(R.id.serial);
+        ImageView imageView14 = (ImageView) view.findViewById(R.id.thread);
+        ImageView imageView15 = (ImageView) view.findViewById(R.id.num_format);
+        ImageView imageView16 = (ImageView) view.findViewById(R.id.col_gen);
+        ImageView imageView17 = (ImageView) view.findViewById(R.id.jav);
+        ImageView imageView18 = (ImageView) view.findViewById(R.id.applet);
+        ImageView imageView19 = (ImageView) view.findViewById(R.id.swings);
+        ImageView imageView20 = (ImageView) view.findViewById(R.id.nw_java);
+        ImageView imageView21 = (ImageView) view.findViewById(R.id.jdbc);
+        ImageView imageView22 = (ImageView) view.findViewById(R.id.misc);
 
-        Glide.with(this).load("https://unsplash.it/200/300/?blur")
-                .thumbnail(0.5f)
-                .crossFade()
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imageView);
+        Glide.with(this).load("http://javafy.in/img/intro.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView1);
+        Glide.with(this).load("http://javafy.in/img/operators.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView2);
+        Glide.with(this).load("http://javafy.in/img/ctrlstmt.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView3);
+        Glide.with(this).load("http://javafy.in/img/classes.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView4);
+        Glide.with(this).load("http://javafy.in/img/array.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView5);
+        Glide.with(this).load("http://javafy.in/img/string.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView6);
+        Glide.with(this).load("http://javafy.in/img/t_inheritance.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView7);
+        Glide.with(this).load("http://javafy.in/img/t_interface.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView8);
+        Glide.with(this).load("http://javafy.in/img/t_package.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView9);
+        Glide.with(this).load("http://javafy.in/img/t_assert.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView10);
+        Glide.with(this).load("http://javafy.in/img/t_fundamentals.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView11);
+        Glide.with(this).load("http://javafy.in/img/t_advjava.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView12);
+        Glide.with(this).load("http://javafy.in/img/t_serialize.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView13);
+        Glide.with(this).load("http://javafy.in/img/t_threads.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView14);
+        Glide.with(this).load("http://javafy.in/img/t_formatters.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView15);
+        Glide.with(this).load("http://javafy.in/img/t_collgen.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView16);
+        Glide.with(this).load("http://javafy.in/img/t_deploy.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView17);
+        Glide.with(this).load("http://javafy.in/img/t_applets.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView18);
+        Glide.with(this).load("http://javafy.in/img/t_swings.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView19);
+        Glide.with(this).load("http://javafy.in/img/t_network.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView20);
+        Glide.with(this).load("http://javafy.in/img/t_jdbc.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView21);
+        Glide.with(this).load("http://javafy.in/img/t_misc.jpg").thumbnail(0.5f).crossFade().diskCacheStrategy(DiskCacheStrategy.ALL).into(imageView22);
 
 
-        Button button1 = (Button) view.findViewById(R.id.introbtn1);
+        Button expbtn1 = (Button) view.findViewById(R.id.explorebtn1);      //intro
+        Button expbtn2 = (Button) view.findViewById(R.id.explorebtn2);      //operators
+        Button expbtn3 = (Button) view.findViewById(R.id.explorebtn3);      //control statements
+        Button expbtn4 = (Button) view.findViewById(R.id.explorebtn4);      //classes
+        Button expbtn5 = (Button) view.findViewById(R.id.explorebtn5);      //arrays
+        Button expbtn6 = (Button) view.findViewById(R.id.explorebtn6);      //strings
+        Button expbtn7 = (Button) view.findViewById(R.id.explorebtn7);      //inheritance
+        Button expbtn8 = (Button) view.findViewById(R.id.explorebtn8);      //abstract n interface
+        Button expbtn9 = (Button) view.findViewById(R.id.explorebtn9);      //packages and jars
+        Button expbtn10 = (Button) view.findViewById(R.id.explorebtn10);    //assertions
+        Button expbtn11 = (Button) view.findViewById(R.id.explorebtn11);    //fundamentals
+        Button expbtn12 = (Button) view.findViewById(R.id.explorebtn12);    //adv java classes
+        Button expbtn13 = (Button) view.findViewById(R.id.explorebtn13);    //serializable
+        Button expbtn14 = (Button) view.findViewById(R.id.explorebtn14);    //thread
+        Button expbtn15 = (Button) view.findViewById(R.id.explorebtn15);    //numb formatter
+        Button expbtn16 = (Button) view.findViewById(R.id.explorebtn16);    //coll and gen
+        Button expbtn17 = (Button) view.findViewById(R.id.explorebtn17);    //java deploy
+        Button expbtn18 = (Button) view.findViewById(R.id.explorebtn18);    //applets
+        Button expbtn19 = (Button) view.findViewById(R.id.explorebtn19);    //swings
+        Button expbtn20 = (Button) view.findViewById(R.id.explorebtn20);    //nw jwa
+        Button expbtn21 = (Button) view.findViewById(R.id.explorebtn21);    //jdbc
+        Button expbtn22 = (Button) view.findViewById(R.id.explorebtn22);    //misc
 
 
-        button1.setOnClickListener(new View.OnClickListener() {
+        expbtn1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v)
                 {
-                    Intent tutorial = new Intent(getActivity(), TutorialIntroduction.class);
+                    Intent t_intro = new Intent(getActivity(), TutorialIntroduction.class);
                     //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
-                    startActivity(tutorial);
-                    Toast.makeText(getActivity(), "Test for button", Toast.LENGTH_LONG).show();
+                    startActivity(t_intro);
+                    Toast.makeText(getActivity(), "Now viewing : Introduction", Toast.LENGTH_LONG).show();
                 }
             });
+
+
+        expbtn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Operators", Toast.LENGTH_LONG).show();
+            }
+        });
+
+        expbtn3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent t_ctrlstmts = new Intent(getActivity(), TutorialCtrlStmts.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                startActivity(t_ctrlstmts);
+                Toast.makeText(getActivity(), "Now viewing : Control Statements", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                Intent t_classnobj = new Intent(getActivity(), TutorialClassesNObjects.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                startActivity(t_classnobj);
+                Toast.makeText(getActivity(), "Now viewing : Classes & Objects", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Arrays", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Strings", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Inheritance", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn8.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Abstract class and Interface", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn9.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Packages and JARs", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn10.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Assertions", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn11.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Fundamental Classes", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn12.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Advanced Java Classes", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn13.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Serialization & Files", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn14.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Threads", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn15.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Number Formatters", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn16.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Collections and Generics", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn17.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Java Deployment", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn18.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Applets", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn19.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Swings", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn20.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Networking in java", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn21.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : JDBC", Toast.LENGTH_LONG).show();
+            }
+        });
+        expbtn22.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                //Intent t_operators = new Intent(getActivity(), TutorialOperators.class);
+                //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.TutorialIntroduction);
+                //startActivity(t_operators);
+                Toast.makeText(getActivity(), "Now viewing : Misc", Toast.LENGTH_LONG).show();
+            }
+        });
 
         return view;
     }
 
 
+
+    public class LoadData extends AsyncTask<ImageView,String,String> {
+
+        @Override
+        protected String doInBackground(ImageView... imageViews) {
+
+            return null;
+        }
+    }
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {

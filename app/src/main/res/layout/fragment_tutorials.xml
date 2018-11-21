@@ -43,7 +43,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
@@ -81,21 +81,21 @@
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
                             android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:layout_toLeftOf="@+id/explorebtn1"
+                            android:layout_toStartOf="@+id/explorebtn1" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn1"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_alignParentTop="true"
-                            android:layout_toLeftOf="@+id/button2"
-                            android:layout_toStartOf="@+id/button2"
+                            android:layout_toLeftOf="@+id/sharebtn1"
+                            android:layout_toStartOf="@+id/sharebtn1"
                             />
 
                         <Button
@@ -103,7 +103,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Share"
-                            android:id="@+id/button2"
+                            android:id="@+id/sharebtn1"
 
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
@@ -116,7 +116,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--Introduction-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay2"
                 android:layout_width="match_parent"
@@ -143,7 +143,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText2"
@@ -184,28 +184,28 @@
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
                             android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:layout_toLeftOf="@+id/explorebtn2"
+                            android:layout_toStartOf="@+id/explorebtn2" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn2"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
                             android:layout_centerVertical="true"
-                            android:layout_toLeftOf="@+id/button4"
-                            android:layout_toStartOf="@+id/button4" />
+                            android:layout_toLeftOf="@+id/sharebtn2"
+                            android:layout_toStartOf="@+id/sharebtn2" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Share"
-                            android:id="@+id/button4"
+                            android:id="@+id/sharebtn2"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_centerVertical="true"
@@ -215,7 +215,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--Operator & commandline args-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay3"
                 android:layout_width="match_parent"
@@ -242,7 +242,7 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
@@ -289,7 +289,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn3"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -312,7 +312,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--control statements-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lay4"
@@ -332,7 +332,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/Intro"
+                            android:id="@+id/classes"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -340,20 +340,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/Intro"
-                            android:layout_alignBottom="@+id/Intro"
+                            android:layout_alignLeft="@+id/classes"
+                            android:layout_alignBottom="@+id/classes"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Introduction"
+                            android:text="Classes &amp; Objects"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -377,15 +377,15 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:text="Classes and objects in java"
+                            android:layout_toLeftOf="@+id/explorebtn4"
+                            android:layout_toStartOf="@+id/explorebtn4" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn4"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -413,7 +413,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--classes & objects-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay5"
                 android:layout_width="match_parent"
@@ -432,7 +432,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/operators"
+                            android:id="@+id/arrays"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -440,20 +440,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/operators"
-                            android:layout_alignBottom="@+id/operators"
+                            android:layout_alignLeft="@+id/arrays"
+                            android:layout_alignBottom="@+id/arrays"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Operators"
+                            android:text="Java I/O &amp; Arrays"
 
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
@@ -480,16 +480,16 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:text="Intro to Arrays and i/o in java"
+                            android:layout_toLeftOf="@+id/button4"
+                            android:layout_toStartOf="@+id/button4" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn5"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -512,7 +512,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--java io & arrays-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay6"
                 android:layout_width="match_parent"
@@ -531,7 +531,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ctrlstmt"
+                            android:id="@+id/strings"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -539,20 +539,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/ctrlstmt"
-                            android:layout_alignBottom="@+id/ctrlstmt"
+                            android:layout_alignLeft="@+id/strings"
+                            android:layout_alignBottom="@+id/strings"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Control Statements"
+                            android:text="Strings in Java"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -576,7 +576,7 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
+                            android:text="String class in java"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -586,7 +586,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn6"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -609,7 +609,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--java strings-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lay7"
@@ -629,7 +629,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/Intro"
+                            android:id="@+id/inheritance"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -637,20 +637,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/Intro"
-                            android:layout_alignBottom="@+id/Intro"
+                            android:layout_alignLeft="@+id/inheritance"
+                            android:layout_alignBottom="@+id/inheritance"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Introduction"
+                            android:text="Inheritance"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -674,15 +674,15 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:text="Inheritance in java"
+                            android:layout_toLeftOf="@+id/explorebtn7"
+                            android:layout_toStartOf="@+id/explorebtn7" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn7"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -710,7 +710,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--inheritance-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay8"
                 android:layout_width="match_parent"
@@ -729,7 +729,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/operators"
+                            android:id="@+id/abs_interface"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -737,20 +737,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/operators"
-                            android:layout_alignBottom="@+id/operators"
+                            android:layout_alignLeft="@+id/abs_interface"
+                            android:layout_alignBottom="@+id/abs_interface"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Operators"
+                            android:text="Interface"
 
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
@@ -777,16 +777,16 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:text="Abstract Classes and Interface in Java"
+                            android:layout_toLeftOf="@+id/explorebtn8"
+                            android:layout_toStartOf="@+id/explorebtn8" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn8"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -809,7 +809,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--abstract & interface-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay9"
                 android:layout_width="match_parent"
@@ -828,7 +828,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ctrlstmt"
+                            android:id="@+id/pkg_jar"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -836,20 +836,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/ctrlstmt"
-                            android:layout_alignBottom="@+id/ctrlstmt"
+                            android:layout_alignLeft="@+id/pkg_jar"
+                            android:layout_alignBottom="@+id/pkg_jar"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Control Statements"
+                            android:text="Java Packages"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -873,7 +873,7 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
+                            android:text="What are JARs and Packages"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -883,7 +883,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn9"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -906,7 +906,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--java pkg & jar-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lay10"
@@ -926,7 +926,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/Intro"
+                            android:id="@+id/exc_assert"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -934,20 +934,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/Intro"
-                            android:layout_alignBottom="@+id/Intro"
+                            android:layout_alignLeft="@+id/exc_assert"
+                            android:layout_alignBottom="@+id/exc_assert"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Introduction"
+                            android:text="Assertions"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -971,15 +971,15 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:text="Exceptions and assertions"
+                            android:layout_toLeftOf="@+id/explorebtn10"
+                            android:layout_toStartOf="@+id/explorebtn10" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn10"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1007,7 +1007,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--exception & assertions-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay11"
                 android:layout_width="match_parent"
@@ -1026,7 +1026,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/operators"
+                            android:id="@+id/fundamentals"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1034,20 +1034,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/operators"
-                            android:layout_alignBottom="@+id/operators"
+                            android:layout_alignLeft="@+id/fundamentals"
+                            android:layout_alignBottom="@+id/fundamentals"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Operators"
+                            android:text="Fundamental Classes"
 
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
@@ -1074,16 +1074,16 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:text="Fundamental Classes"
+                            android:layout_toLeftOf="@+id/explorebtn11"
+                            android:layout_toStartOf="@+id/explorebtn11" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn11"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1106,7 +1106,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--Fundamental classes-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay12"
                 android:layout_width="match_parent"
@@ -1125,7 +1125,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ctrlstmt"
+                            android:id="@+id/adv_java"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1133,20 +1133,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/ctrlstmt"
-                            android:layout_alignBottom="@+id/ctrlstmt"
+                            android:layout_alignLeft="@+id/adv_java"
+                            android:layout_alignBottom="@+id/adv_java"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Control Statements"
+                            android:text="Advanced Java Classes"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -1170,7 +1170,7 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
+                            android:text="Advanced classes and Inner Classes."
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -1180,7 +1180,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn12"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1203,7 +1203,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView><!--advanced java classes-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lay13"
@@ -1223,7 +1223,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/Intro"
+                            android:id="@+id/serial"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1231,20 +1231,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/Intro"
-                            android:layout_alignBottom="@+id/Intro"
+                            android:layout_alignLeft="@+id/serial"
+                            android:layout_alignBottom="@+id/serial"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Introduction"
+                            android:text="Serialization &amp; Files"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -1268,15 +1268,15 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:text="Java Serialization and file streams"
+                            android:layout_toLeftOf="@+id/explorebtn13"
+                            android:layout_toStartOf="@+id/explorebtn13" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn13"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1304,7 +1304,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--serializable & files-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay14"
                 android:layout_width="match_parent"
@@ -1323,7 +1323,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/operators"
+                            android:id="@+id/thread"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1331,20 +1331,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/operators"
-                            android:layout_alignBottom="@+id/operators"
+                            android:layout_alignLeft="@+id/thread"
+                            android:layout_alignBottom="@+id/thread"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Operators"
+                            android:text="Threads"
 
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
@@ -1371,16 +1371,16 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:text="Multi threading, Threads, Runnable"
+                            android:layout_toLeftOf="@+id/explorebtn14"
+                            android:layout_toStartOf="@+id/explorebtn14" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn14"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1403,7 +1403,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--threads-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay15"
                 android:layout_width="match_parent"
@@ -1422,7 +1422,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ctrlstmt"
+                            android:id="@+id/num_format"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1430,20 +1430,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/ctrlstmt"
-                            android:layout_alignBottom="@+id/ctrlstmt"
+                            android:layout_alignLeft="@+id/num_format"
+                            android:layout_alignBottom="@+id/num_format"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Control Statements"
+                            android:text="Number Formatters"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -1467,7 +1467,7 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
+                            android:text="Java formatters"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -1477,7 +1477,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn15"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1500,7 +1500,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--number formatters-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lay16"
@@ -1520,7 +1520,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/Intro"
+                            android:id="@+id/col_gen"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1528,20 +1528,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/Intro"
-                            android:layout_alignBottom="@+id/Intro"
+                            android:layout_alignLeft="@+id/col_gen"
+                            android:layout_alignBottom="@+id/col_gen"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Introduction"
+                            android:text="Collections &amp; Generics"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -1565,15 +1565,15 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:text="Introduction Collections and Generics"
+                            android:layout_toLeftOf="@+id/explorebtn16"
+                            android:layout_toStartOf="@+id/explorebtn16" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn16"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1601,7 +1601,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--collection & generics-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay17"
                 android:layout_width="match_parent"
@@ -1620,7 +1620,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/operators"
+                            android:id="@+id/jav"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1628,20 +1628,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
-                            android:id="@+id/myImageViewText2"
+                            android:id="@+id/jav_deploy"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/operators"
-                            android:layout_alignBottom="@+id/operators"
+                            android:layout_alignLeft="@+id/jav"
+                            android:layout_alignBottom="@+id/jav"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Operators"
+                            android:text="Java Deployment"
 
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
@@ -1668,16 +1668,16 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:text="How to deploy a java project"
+                            android:layout_toLeftOf="@+id/explorebtn17"
+                            android:layout_toStartOf="@+id/explorebtn17" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn17"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1700,7 +1700,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--java deployment-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay18"
                 android:layout_width="match_parent"
@@ -1719,7 +1719,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ctrlstmt"
+                            android:id="@+id/applet"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1727,20 +1727,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/ctrlstmt"
-                            android:layout_alignBottom="@+id/ctrlstmt"
+                            android:layout_alignLeft="@+id/applet"
+                            android:layout_alignBottom="@+id/applet"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Control Statements"
+                            android:text="Applets and GUI"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -1764,7 +1764,7 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
+                            android:text="Java Applets and GUI programming"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -1774,7 +1774,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn18"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1797,7 +1797,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--applets & GUI-->
 
             <android.support.v7.widget.CardView
                 android:id="@+id/lay19"
@@ -1817,7 +1817,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/Intro"
+                            android:id="@+id/swings"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1825,20 +1825,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/Intro"
-                            android:layout_alignBottom="@+id/Intro"
+                            android:layout_alignLeft="@+id/swings"
+                            android:layout_alignBottom="@+id/swings"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Introduction"
+                            android:text="Java Swings"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -1862,15 +1862,15 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
-                            android:layout_toLeftOf="@+id/introbtn1"
-                            android:layout_toStartOf="@+id/introbtn1" />
+                            android:text="Swings and usage of swing."
+                            android:layout_toLeftOf="@+id/explorebtn19"
+                            android:layout_toStartOf="@+id/explorebtn19" />
 
                         <Button
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/introbtn1"
+                            android:id="@+id/explorebtn19"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1898,7 +1898,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--java swing-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay20"
                 android:layout_width="match_parent"
@@ -1917,7 +1917,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/operators"
+                            android:id="@+id/nw_java"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -1925,20 +1925,21 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
+
                             />
                         <TextView
                             android:id="@+id/myImageViewText2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/operators"
-                            android:layout_alignBottom="@+id/operators"
+                            android:layout_alignLeft="@+id/nw_java"
+                            android:layout_alignBottom="@+id/nw_java"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Operators"
+                            android:text="Networking in Java"
 
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
@@ -1965,16 +1966,16 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Operators, Command Line Arguments and TypeCasting"
-                            android:layout_toLeftOf="@+id/button3"
-                            android:layout_toStartOf="@+id/button3" />
+                            android:text="Networking in Java"
+                            android:layout_toLeftOf="@+id/explorebtn20"
+                            android:layout_toStartOf="@+id/explorebtn20" />
 
                         <Button
                             style="@style/Widget.AppCompat.Button.Borderless"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:text="Explore"
-                            android:id="@+id/button3"
+                            android:id="@+id/explorebtn20"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -1997,7 +1998,7 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--networking in java-->
             <android.support.v7.widget.CardView
                 android:id="@+id/lay21"
                 android:layout_width="match_parent"
@@ -2016,7 +2017,7 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:id="@+id/ctrlstmt"
+                            android:id="@+id/jdbc"
                             android:layout_width="match_parent"
                             android:layout_height="150dp"
                             android:layout_alignParentEnd="true"
@@ -2024,20 +2025,20 @@
                             android:layout_alignParentRight="true"
                             android:layout_alignParentStart="true"
                             android:src="@drawable/inheritanc"
-                            android:scaleType="fitXY"
+                            android:scaleType="centerCrop"
                             />
                         <TextView
                             android:id="@+id/myImageViewText3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_alignLeft="@+id/ctrlstmt"
-                            android:layout_alignBottom="@+id/ctrlstmt"
+                            android:layout_alignLeft="@+id/jdbc"
+                            android:layout_alignBottom="@+id/jdbc"
                             android:layout_margin="1dp"
                             android:gravity="center"
                             android:textStyle="bold"
                             android:textSize="30sp"
                             android:paddingLeft="10sp"
-                            android:text="Control Statements"
+                            android:text="Java Databases"
                             android:textColor="#FFFFFF" />
                     </RelativeLayout>
 
@@ -2061,7 +2062,7 @@
                             android:paddingLeft="15dp"
                             android:paddingRight="5dp"
                             android:paddingTop="10dp"
-                            android:text="Introduction to Java and JRE"
+                            android:text="Learn JDBC &amp; ODBC"
                             android:layout_alignParentTop="true"
                             android:layout_alignParentLeft="true"
                             android:layout_alignParentStart="true" />
@@ -2071,7 +2072,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Explore"
-                            android:id="@+id/button5"
+                            android:id="@+id/explorebtn21"
                             android:textColor="@color/colorAccent"
                             android:textStyle="normal"
                             android:layout_gravity="right"
@@ -2094,8 +2095,104 @@
 
 
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView> <!--jdbc odbc-->
+            <android.support.v7.widget.CardView
+                android:id="@+id/lay21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="10dp">
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/misc"
+                            android:layout_width="match_parent"
+                            android:layout_height="150dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentStart="true"
+                            android:src="@drawable/inheritanc"
+                            android:scaleType="centerCrop"
+                            />
+                        <TextView
+                            android:id="@+id/myImageViewText3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignLeft="@+id/misc"
+                            android:layout_alignBottom="@+id/misc"
+                            android:layout_margin="1dp"
+                            android:gravity="center"
+                            android:textStyle="bold"
+                            android:textSize="30sp"
+                            android:paddingLeft="10sp"
+                            android:text="Miscellaneous"
+                            android:textColor="#FFFFFF" />
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentStart="true"
+                        android:layout_gravity="center_horizontal">
+
+                        <TextView
+                            android:id="@+id/textView7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:background="@color/white"
+                            android:paddingBottom="10dp"
+                            android:paddingLeft="15dp"
+                            android:paddingRight="5dp"
+                            android:paddingTop="10dp"
+                            android:text="Appendix and Extras"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true" />
+
+                        <Button
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Explore"
+                            android:id="@+id/explorebtn22"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="normal"
+                            android:layout_gravity="right"
+                            android:layout_alignParentTop="true"
+                            android:layout_toLeftOf="@+id/button6"
+                            android:layout_toStartOf="@+id/button6" />
+
+                        <Button
+                            style="@style/Widget.AppCompat.Button.Borderless"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Share"
+                            android:id="@+id/button6"
+                            android:textColor="@color/colorAccent"
+                            android:textStyle="normal"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_alignParentEnd="true" />
+                    </RelativeLayout>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView> <!--misc-->
 
 
 

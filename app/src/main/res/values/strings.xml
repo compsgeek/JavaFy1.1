@@ -6,4 +6,11 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_tutorial_introduction">Introduction</string>
+    <string name="title_activity_tutorial_operators">TutorialOperators</string>
+    <string name="title_activity_tutorial_ctrl_stmts">Control Statements</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="title_activity_tutorial_classes_nobjects">Classes and Objects</string>
+    <string name="title_activity_tutorial_io_arrays">Java I/O &amp; Arrays</string>
 </resources>

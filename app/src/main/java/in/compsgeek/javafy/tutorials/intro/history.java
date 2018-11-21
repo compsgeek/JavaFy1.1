@@ -1,12 +1,15 @@
 package in.compsgeek.javafy.tutorials.intro;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -62,7 +65,11 @@ public class history extends Fragment {
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
     }
-
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE );
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -71,7 +78,18 @@ public class history extends Fragment {
 
         WebView myWebView = (WebView) v.findViewById(R.id.webView);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("http://www.google.com");
+
+
+
+        myWebView.getSettings().setAllowFileAccess( true );
+        myWebView.getSettings().setAppCacheEnabled( true );
+        myWebView.getSettings().setJavaScriptEnabled( true );
+        myWebView.getSettings().setCacheMode( WebSettings.LOAD_DEFAULT ); // load online by default
+
+        if ( !isNetworkAvailable() ) { // loading offline
+            myWebView.getSettings().setCacheMode( WebSettings.LOAD_CACHE_ELSE_NETWORK );
+        }
+        myWebView.loadUrl("http://www.javafy.in/history.html");
         return v;
     }
 

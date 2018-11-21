@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import in.compsgeek.javafy.R;
 
@@ -65,7 +68,13 @@ public class Environment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_environment, container, false);
+        View v = inflater.inflate(R.layout.fragment_environment, container, false);
+
+        WebView myWebView = (WebView) v.findViewById(R.id.webView);
+
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.loadUrl("http://www.javafy.in/javaenv.html");
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

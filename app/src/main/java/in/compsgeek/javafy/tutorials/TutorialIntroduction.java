@@ -31,7 +31,15 @@ import in.compsgeek.javafy.tutorials.intro.Versions;
 import in.compsgeek.javafy.tutorials.intro.WritingCode;
 import in.compsgeek.javafy.tutorials.intro.history;
 
-public class TutorialIntroduction extends AppCompatActivity implements history.OnFragmentInteractionListener,Fundamentals.OnFragmentInteractionListener,Features.OnFragmentInteractionListener,Environment.OnFragmentInteractionListener,JRE.OnFragmentInteractionListener,UnderstandCode.OnFragmentInteractionListener,Versions.OnFragmentInteractionListener,WritingCode.OnFragmentInteractionListener {
+public class TutorialIntroduction extends AppCompatActivity implements
+        history.OnFragmentInteractionListener,
+        Fundamentals.OnFragmentInteractionListener,
+        Features.OnFragmentInteractionListener,
+        Environment.OnFragmentInteractionListener,
+        JRE.OnFragmentInteractionListener,
+        UnderstandCode.OnFragmentInteractionListener,
+        Versions.OnFragmentInteractionListener,
+        WritingCode.OnFragmentInteractionListener {
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
