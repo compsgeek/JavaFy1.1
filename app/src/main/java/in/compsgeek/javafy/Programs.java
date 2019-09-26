@@ -39,7 +39,7 @@ public class Programs extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Programs.
+     * @return A new instance of fragment Ch5_4_Programs.
      */
     // TODO: Rename and change types and number of parameters
     public static Programs newInstance(String param1, String param2) {

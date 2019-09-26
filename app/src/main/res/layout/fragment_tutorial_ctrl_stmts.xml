@@ -4,7 +4,7 @@
     android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="in.compsgeek.javafy.tutorials.TutorialCtrlStmts$PlaceholderFragment">
+    tools:context="in.compsgeek.javafy.tutorials.Ch03TutorialCtrlStmts$PlaceholderFragment">
 
     <TextView
         android:id="@+id/section_label"

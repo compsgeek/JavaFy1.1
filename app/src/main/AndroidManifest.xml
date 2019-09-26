@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity
-            android:name=".tutorials.TutorialIntroduction"
+            android:name=".tutorials.Ch01TutorialIntroduction"
             android:label="@string/title_activity_tutorial_introduction"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
@@ -33,7 +33,7 @@
                 android:value="in.compsgeek.javafy.MainActivity" />
         </activity>
         <activity
-            android:name=".tutorials.TutorialOperators"
+            android:name=".tutorials.Ch02TutorialOperators"
             android:label="@string/title_activity_tutorial_operators"
             android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
@@ -42,16 +42,84 @@
                 android:value="in.compsgeek.javafy.MainActivity" />
         </activity>
         <activity
-            android:name=".tutorials.TutorialCtrlStmts"
+            android:name=".tutorials.Ch03TutorialCtrlStmts"
             android:label="@string/title_activity_tutorial_ctrl_stmts"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".tutorials.TutorialClassesNObjects"
+            android:name=".tutorials.Ch04TutorialClassesNObjects"
             android:label="@string/title_activity_tutorial_classes_nobjects"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".tutorials.TutorialIoArrays"
+            android:name=".tutorials.Ch05TutorialIoArrays"
             android:label="@string/title_activity_tutorial_io_arrays"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch06TutorialStrings"
+            android:label="@string/title_activity_ch06_tutorial_strings"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch07TutorialInheritance"
+            android:label="@string/title_activity_ch07_tutorial_inheritance"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch08TutorialInterface"
+            android:label="@string/title_activity_ch08_tutorial_interface"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch09TutorialJavaPackages"
+            android:label="@string/title_activity_ch09_tutorial_java_packages"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch10TutorialAssertions"
+            android:label="@string/title_activity_ch10_tutorial_assertions"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch11TutorialFundamentalClasses"
+            android:label="@string/title_activity_ch11_tutorial_fundamental_classes"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch12Tutorial_AdvJavaClasses"
+            android:label="@string/title_activity_ch12_tutorial__adv_java_classes"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch13TutorialSerialFiles"
+            android:label="@string/title_activity_ch13_tutorial_serial_files"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch14TutorialThreads"
+            android:label="@string/title_activity_ch14_tutorial_threads"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch15TutorialNumFormat"
+            android:label="@string/title_activity_ch15_tutorial_num_format"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch16TutorialCollections"
+            android:label="@string/title_activity_ch16_tutorial_collections"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch17TutorialJavaDeployment"
+            android:label="@string/title_activity_ch17_tutorial_java_deployment"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch18TutorialAppletGUI"
+            android:label="@string/title_activity_ch18_tutorial_applet_gui"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch19TutorialSwings"
+            android:label="@string/title_activity_ch19_tutorial_swings"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch20TutorialNetworking"
+            android:label="@string/title_activity_ch20_tutorial_networking"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch21TutorialJDBC"
+            android:label="@string/title_activity_ch21_tutorial_jdbc"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".tutorials.Ch22TutorialMiscellaneous"
+            android:label="@string/title_activity_ch22_tutorial_miscellaneous"
             android:theme="@style/AppTheme"></activity>
     </application>
 

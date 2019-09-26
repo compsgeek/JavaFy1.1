@@ -13,4 +13,23 @@
     <string name="tab_text_3">Tab 3</string>
     <string name="title_activity_tutorial_classes_nobjects">Classes and Objects</string>
     <string name="title_activity_tutorial_io_arrays">Java I/O &amp; Arrays</string>
+    <string name="title_activity_ch06_tutorial_strings">Ch06TutorialStrings</string>
+    <string name="title_activity_ch07_tutorial_inheritance">Ch07TutorialInheritance</string>
+    <string name="title_activity_ch08_tutorial_interface">Ch08TutorialInterface</string>
+    <string name="title_activity_ch09_tutorial_java_packages">Ch09TutorialJavaPackages</string>
+    <string name="title_activity_ch10_tutorial_assertions">Ch10TutorialAssertions</string>
+    <string name="title_activity_ch11_tutorial_fundamental_classes">Ch11TutorialFundamentalClasses
+    </string>
+    <string name="title_activity_ch12_tutorial__adv_java_classes">Ch12Tutorial_AdvJavaClasses
+    </string>
+    <string name="title_activity_ch13_tutorial_serial_files">Ch13TutorialSerialFiles</string>
+    <string name="title_activity_ch14_tutorial_threads">Ch14TutorialThreads</string>
+    <string name="title_activity_ch15_tutorial_num_format">Ch15TutorialNumFormat</string>
+    <string name="title_activity_ch16_tutorial_collections">Ch16TutorialCollections</string>
+    <string name="title_activity_ch17_tutorial_java_deployment">Ch17TutorialJavaDeployment</string>
+    <string name="title_activity_ch18_tutorial_applet_gui">Ch18TutorialAppletGUI</string>
+    <string name="title_activity_ch19_tutorial_swings">Ch19TutorialSwings</string>
+    <string name="title_activity_ch20_tutorial_networking">Ch20TutorialNetworking</string>
+    <string name="title_activity_ch21_tutorial_jdbc">Ch21TutorialJDBC</string>
+    <string name="title_activity_ch22_tutorial_miscellaneous">Ch22TutorialMiscellaneous</string>
 </resources>
