@@ -75,7 +75,7 @@ public class Ch5_4_Programs extends Fragment {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("http://www.javafy.in/ch4/objnclass.html");
+        myWebView.loadUrl("http://www.javafy.in/ch5/programs.html");
         return v;
     }
 

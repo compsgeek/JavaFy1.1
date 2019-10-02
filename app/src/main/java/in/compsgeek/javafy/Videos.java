@@ -1,12 +1,23 @@
 package in.compsgeek.javafy;
 
 import android.content.Context;
+import android.content.res.Configuration;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.webkit.WebChromeClient;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.FrameLayout;
 
 
 /**
@@ -26,7 +37,7 @@ public class Videos extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    WebView myWebView;
     private OnFragmentInteractionListener mListener;
 
     public Videos() {
@@ -64,9 +75,94 @@ public class Videos extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_videos, container, false);
+        View v = inflater.inflate(R.layout.fragment_videos, container, false);
+        myWebView = v.findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient());
+        myWebView.setWebChromeClient(new MyChrome());
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setAllowFileAccess(true);
+        webSettings.setAppCacheEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        myWebView.loadUrl("http://www.javafy.in/videos/youtube_tab.html");
+
+        return v;
     }
 
+
+
+    private class MyChrome extends WebChromeClient {
+
+        private View mCustomView;
+        private WebChromeClient.CustomViewCallback mCustomViewCallback;
+        protected FrameLayout mFullscreenContainer;
+        private int mOriginalOrientation;
+        private int mOriginalSystemUiVisibility;
+
+        MyChrome() {}
+
+        public Bitmap getDefaultVideoPoster()
+        {
+            if (mCustomView == null) {
+                return null;
+            }
+            return BitmapFactory.decodeResource(getActivity().getResources(), 2130837573);
+        }
+
+        public void onHideCustomView()
+        {
+            ((FrameLayout)getActivity().getWindow().getDecorView()).removeView(this.mCustomView);
+            this.mCustomView = null;
+            getActivity().getWindow().getDecorView().setSystemUiVisibility(this.mOriginalSystemUiVisibility);
+            getActivity().setRequestedOrientation(this.mOriginalOrientation);
+            this.mCustomViewCallback.onCustomViewHidden();
+            this.mCustomViewCallback = null;
+        }
+
+        public void onShowCustomView(View paramView, WebChromeClient.CustomViewCallback paramCustomViewCallback)
+        {
+            if (this.mCustomView != null)
+            {
+                onHideCustomView();
+                return;
+            }
+            this.mCustomView = paramView;
+            this.mOriginalSystemUiVisibility = getActivity().getWindow().getDecorView().getSystemUiVisibility();
+            this.mOriginalOrientation = getActivity().getRequestedOrientation();
+            this.mCustomViewCallback = paramCustomViewCallback;
+            ((FrameLayout)getActivity().getWindow().getDecorView()).addView(this.mCustomView, new FrameLayout.LayoutParams(-1, -1));
+            getActivity().getWindow().getDecorView().setSystemUiVisibility(3846 | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+            //getActivity().getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_FULLSCREEN|View.SYSTEM_UI_FLAG_FULLSCREEN);
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
+                getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }
+            if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            getActivity().getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }
+            else {
+                getActivity().getWindow().clearFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
+            }
+        }
+    }
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        myWebView.saveState(outState);
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        if(newConfig.orientation == Configuration.ORIENTATION_LANDSCAPE) {
+            getActivity().getActionBar().hide();
+        } else {
+            getActivity().getActionBar().show();
+        }
+    }
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        myWebView.restoreState(savedInstanceState);
+    }
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
