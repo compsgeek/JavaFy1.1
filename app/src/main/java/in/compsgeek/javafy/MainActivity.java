@@ -17,7 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainActivity extends AppCompatActivity implements Tutorials.OnFragmentInteractionListener,Programs.OnFragmentInteractionListener,Videos.OnFragmentInteractionListener,Qna.OnFragmentInteractionListener,Interviews.OnFragmentInteractionListener,Misc.OnFragmentInteractionListener{
+public class MainActivity extends AppCompatActivity implements Tutorials.OnFragmentInteractionListener,Programs.OnFragmentInteractionListener,Videos.OnFragmentInteractionListener,IDE.OnFragmentInteractionListener,Interviews.OnFragmentInteractionListener,Misc.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -64,14 +64,14 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
 //                .diskCacheStrategy(DiskCacheStrategy.ALL)
 //                .into(imageView);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
+      /*  FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
 
     }
 
@@ -194,7 +194,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
                 case 2:
                     return new Videos();
                 case 3:
-                    return new Qna();
+                    return new IDE();
                 case 4:
                     return new Interviews();
                 case 5:
@@ -223,7 +223,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
                     Videos videos = (Videos) createdFragment;
                     break;
                 case 3:
-                    Qna qna = (Qna) createdFragment;
+                    IDE qna = (IDE) createdFragment;
                     break;
                 case 4:
                     Interviews interviews = (Interviews) createdFragment;
@@ -251,7 +251,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
                 case 2:
                     return "Videos";
                 case 3:
-                    return "Q&A";
+                    return "Java IDE";
                 case 4:
                     return "Interviews";
                 case 5:

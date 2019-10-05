@@ -7,17 +7,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Qna.OnFragmentInteractionListener} interface
+ * {@link IDE.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Qna#newInstance} factory method to
+ * Use the {@link IDE#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Qna extends Fragment {
+public class IDE extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -26,10 +29,10 @@ public class Qna extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-
+    WebView myWebView;
     private OnFragmentInteractionListener mListener;
 
-    public Qna() {
+    public IDE() {
         // Required empty public constructor
     }
 
@@ -39,11 +42,11 @@ public class Qna extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Qna.
+     * @return A new instance of fragment IDE.
      */
     // TODO: Rename and change types and number of parameters
-    public static Qna newInstance(String param1, String param2) {
-        Qna fragment = new Qna();
+    public static IDE newInstance(String param1, String param2) {
+        IDE fragment = new IDE();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,10 +67,38 @@ public class Qna extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_qna, container, false);
+        // Inflate the layout for this fragment
+        View v = inflater.inflate(R.layout.fragment_qna, container, false);
+        myWebView = v.findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setAllowFileAccess(true);
+        webSettings.setAppCacheEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+
+        //myWebView.loadUrl("javascript:document.getElementsByClassName(\"jsx-766180523 pane\").setAttribute(\"style\",\"display:none;\");");
+        //myWebView.loadUrl("https://repl.it/languages/java10");
+
+        //final WebView webview = (WebView)findViewById(R.id.browser);
+        myWebView.setWebViewClient(new WebViewClient() {
+            @Override
+            public void onPageFinished(WebView view, String url)
+            {
+                // hide element by class name
+                myWebView.loadUrl("javascript:(function() { " +
+                        "document.getElementsByClassName('jsx-766180523 pane')[0].style.display='none';})()");
+                //myWebView.loadUrl("javascript:document.getElementsByClassName('jsx-766180523 pane')[0].style.display=\"none\";");
+            }
+        });
+
+        myWebView.loadUrl("https://repl.it/languages/java10");
+
+        return v;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
+
+// TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
