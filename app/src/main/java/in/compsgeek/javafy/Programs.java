@@ -73,7 +73,8 @@ public class Programs extends Fragment {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        myWebView.loadUrl("http://www.javafy.in/programs/list.html");
+        //myWebView.loadUrl("http://www.javafy.in/programs/list.html");
+        myWebView.loadUrl("https://javafy.flarum.cloud");
 
         return v;
     }

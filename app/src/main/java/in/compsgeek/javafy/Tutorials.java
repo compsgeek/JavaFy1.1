@@ -91,6 +91,7 @@ public class Tutorials extends Fragment implements View.OnClickListener {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -392,7 +393,7 @@ public class Tutorials extends Fragment implements View.OnClickListener {
                 Intent t_misc = new Intent(getActivity(), Ch22TutorialMiscellaneous.class);
                 //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.Ch01TutorialIntroduction);
                 startActivity(t_misc);
-                Toast.makeText(getActivity(), "Now viewing : Misc", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Now viewing : Forum", Toast.LENGTH_LONG).show();
             }
         });
 

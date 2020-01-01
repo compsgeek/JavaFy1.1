@@ -78,13 +78,13 @@ public class Videos extends Fragment {
         View v = inflater.inflate(R.layout.fragment_videos, container, false);
         myWebView = v.findViewById(R.id.webView);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.setWebChromeClient(new MyChrome());
+        //myWebView.setWebChromeClient(new MyChrome());
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setAllowFileAccess(true);
         webSettings.setAppCacheEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        myWebView.loadUrl("http://www.javafy.in/videos/youtube_tab.html");
+        myWebView.loadUrl("http://www.javafy.in/videos/youtube_tab.php");
 
         return v;
     }

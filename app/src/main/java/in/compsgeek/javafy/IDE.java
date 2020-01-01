@@ -87,7 +87,7 @@ public class IDE extends Fragment {
             {
                 // hide element by class name
                 myWebView.loadUrl("javascript:(function() { " +
-                        "document.getElementsByClassName('jsx-766180523 pane')[0].style.display='none';})()");
+                        "document.getElementsByClassName('jsx-766180523 pane')[0].style.display='none';'})()");
                 //myWebView.loadUrl("javascript:document.getElementsByClassName('jsx-766180523 pane')[0].style.display=\"none\";");
             }
         });

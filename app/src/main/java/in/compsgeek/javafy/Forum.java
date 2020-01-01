@@ -7,17 +7,20 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Misc.OnFragmentInteractionListener} interface
+ * {@link Forum.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Misc#newInstance} factory method to
+ * Use the {@link Forum#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Misc extends Fragment {
+public class Forum extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -29,7 +32,7 @@ public class Misc extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Misc() {
+    public Forum() {
         // Required empty public constructor
     }
 
@@ -39,11 +42,11 @@ public class Misc extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Misc.
+     * @return A new instance of fragment Forum.
      */
     // TODO: Rename and change types and number of parameters
-    public static Misc newInstance(String param1, String param2) {
-        Misc fragment = new Misc();
+    public static Forum newInstance(String param1, String param2) {
+        Forum fragment = new Forum();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -64,7 +67,16 @@ public class Misc extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_misc, container, false);
+        View v = inflater.inflate(R.layout.fragment_misc, container, false);
+        WebView myWebView = v.findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        //myWebView.loadUrl("http://www.javafy.in/programs/list.html");
+        myWebView.loadUrl("https://javafy.flarum.cloud");
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

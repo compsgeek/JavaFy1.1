@@ -1,9 +1,10 @@
 package in.compsgeek.javafy;
 
+import android.annotation.SuppressLint;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -17,7 +18,15 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 
-public class MainActivity extends AppCompatActivity implements Tutorials.OnFragmentInteractionListener,Programs.OnFragmentInteractionListener,Videos.OnFragmentInteractionListener,IDE.OnFragmentInteractionListener,Interviews.OnFragmentInteractionListener,Misc.OnFragmentInteractionListener{
+import java.util.Objects;
+
+public class MainActivity extends AppCompatActivity implements
+        Tutorials.OnFragmentInteractionListener,
+        Programs.OnFragmentInteractionListener,
+        Videos.OnFragmentInteractionListener,
+        IDE.OnFragmentInteractionListener,
+        Interviews.OnFragmentInteractionListener,
+        Forum.OnFragmentInteractionListener{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -37,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
 
 
 
+    @SuppressLint("NewApi")
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -51,30 +63,23 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
         // Set up the ViewPager with the sections adapter.
         mViewPager = findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
-
+        setupViewPager(mViewPager);
         TabLayout tabLayout = findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
         tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
 
-//        ImageView imageView = (ImageView) findViewById(R.id.ctrlstmt);
-//
-//        Glide.with(this).load("http://api.androidhive.info/images/glide/medium/deadpool.jpg")
-//                .thumbnail(0.5f)
-//                .crossFade()
-//                .diskCacheStrategy(DiskCacheStrategy.ALL)
-//                .into(imageView);
-
-      /*  FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
-
     }
 
+    private void setupViewPager(ViewPager viewPager) {
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        adapter.addFrag(new Tutorials(), "Java Tutorials");
+        adapter.addFrag(new Programs(), "Programs");
+        adapter.addFrag(new Videos(), "Videos");
+        adapter.addFrag(new IDE(), "Java IDE");
+        adapter.addFrag(new Interviews(), "Interviews");
+        adapter.addFrag(new Forum(), "Forum");
+        viewPager.setAdapter(adapter);
+    }
 
 
     @Override
@@ -133,41 +138,6 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
         public View onCreateView(final LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View rootView = inflater.inflate(R.layout.fragment_main, container, false);
-//            if (getArguments().getInt(ARG_SECTION_NUMBER) == 1) {
-//                rootView = inflater.inflate(R.layout.fragment_tutorials, container, false);
-//
-//                return rootView;
-//            } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 2) {
-//                rootView = inflater.inflate(R.layout.fragment_programs, container, false);
-//                return rootView;
-//            } else if (getArguments().getInt(ARG_SECTION_NUMBER) == 3) {
-//                rootView = inflater.inflate(R.layout.fragment_videos, container, false);
-//                return rootView;
-//            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 4) {
-//                rootView = inflater.inflate(R.layout.fragment_qna, container, false);
-//                return rootView;
-//            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 5) {
-//                rootView = inflater.inflate(R.layout.fragment_interviews, container, false);
-//                return rootView;
-//            }else if (getArguments().getInt(ARG_SECTION_NUMBER) == 6) {
-//                rootView = inflater.inflate(R.layout.fragment_misc, container, false);
-//                return rootView;
-//            }
-
-//            Button button = (Button) rootView.findViewById(R.id.button2);
-//            button.setOnClickListener(new View.OnClickListener()
-//            {
-//                @Override
-//                public void onClick(View v)
-//                {
-//                    // do something
-//
-//                    Intent tutorial = new Intent(getActivity(), Ch01TutorialIntroduction.class);
-//                    //tutorial.setClassName(in.compsgeek.javafy.MainActivity, in.compsgeek.javafy.tutorials.Ch01TutorialIntroduction);
-//                    startActivity(tutorial);
-//
-//                }
-//            });
 
             return rootView;
         }
@@ -198,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
                 case 4:
                     return new Interviews();
                 case 5:
-                    return new Misc();
+                    return new Forum();
                 default:
                     // This should never happen. Always account for each position above
                     return null;
@@ -208,33 +178,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
             //return PlaceholderFragment.newInstance(position + 1);
         }
 
-        /*@Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            Fragment createdFragment = (Fragment) super.instantiateItem(container, position);
-            // save the appropriate reference depending on position
-            switch (position) {
-                case 0:
-                    Tutorials tutorials = (Tutorials) createdFragment;
-                    break;
-                case 1:
-                    Programs programs = (Programs) createdFragment;
-                    break;
-                case 2:
-                    Videos videos = (Videos) createdFragment;
-                    break;
-                case 3:
-                    IDE qna = (IDE) createdFragment;
-                    break;
-                case 4:
-                    Interviews interviews = (Interviews) createdFragment;
-                    break;
-                case 5:
-                    Misc misc = (Misc) createdFragment;
-                    break;
-            }
-            return createdFragment;
-        }
-*/
+
         @Override
         public int getCount() {
             // Show 3 total pages.
@@ -255,7 +199,7 @@ public class MainActivity extends AppCompatActivity implements Tutorials.OnFragm
                 case 4:
                     return "Interviews";
                 case 5:
-                    return "Misc";
+                    return "Forum";
             }
             return null;
         }

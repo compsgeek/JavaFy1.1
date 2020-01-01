@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|enterAlways"
+            app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             app:popupTheme="@style/AppTheme.PopupOverlay">
 
         </android.support.v7.widget.Toolbar>
@@ -30,7 +31,7 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:tabMode="fixed"
+            app:tabMode="scrollable"
             app:tabGravity="fill"/>
 
     </android.support.design.widget.AppBarLayout>
