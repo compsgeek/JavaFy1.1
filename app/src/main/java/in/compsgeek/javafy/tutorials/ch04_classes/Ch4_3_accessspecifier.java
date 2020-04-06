@@ -76,7 +76,7 @@ public class Ch4_3_accessspecifier extends Fragment {
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("http://www.javafy.in/ch4/objnclass.html");
+        myWebView.loadUrl("http://www.javafy.in/ch4/accessspecifier.html");
         return v;
     }
 
