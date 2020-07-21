@@ -1,4 +1,4 @@
-package in.compsgeek.javafy.tutorials.ch05_ioarray;
+package in.compsgeek.javafy.tutorials.ch06_strings;
 
 import android.content.Context;
 import android.net.Uri;
@@ -16,12 +16,12 @@ import in.compsgeek.javafy.R;
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link Ch5_3_BuffReader.OnFragmentInteractionListener} interface
+ * {@link Ch6_2_StringMethods.OnFragmentInteractionListener} interface
  * to handle interaction events.
- * Use the {@link Ch5_3_BuffReader#newInstance} factory method to
+ * Use the {@link Ch6_2_StringMethods#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class Ch5_3_BuffReader extends Fragment {
+public class Ch6_2_StringMethods extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -33,7 +33,7 @@ public class Ch5_3_BuffReader extends Fragment {
 
     private OnFragmentInteractionListener mListener;
 
-    public Ch5_3_BuffReader() {
+    public Ch6_2_StringMethods() {
         // Required empty public constructor
     }
 
@@ -43,11 +43,11 @@ public class Ch5_3_BuffReader extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment Ch5_3_BuffReader.
+     * @return A new instance of fragment Ch6_2_StringMethods.
      */
     // TODO: Rename and change types and number of parameters
-    public static Ch5_3_BuffReader newInstance(String param1, String param2) {
-        Ch5_3_BuffReader fragment = new Ch5_3_BuffReader();
+    public static Ch6_2_StringMethods newInstance(String param1, String param2) {
+        Ch6_2_StringMethods fragment = new Ch6_2_StringMethods();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -68,14 +68,14 @@ public class Ch5_3_BuffReader extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_buff_reader, container, false);
+        View v = inflater.inflate(R.layout.fragment_ch6_2__string_methods, container, false);
         WebView myWebView = v.findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient());
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("http://www.javafy.in/ch5/bufferedreader.html");
+        myWebView.loadUrl("http://www.javafy.in/ch6/stringmethod.html");
+
         return v;
     }
 
