@@ -18,6 +18,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import in.compsgeek.javafy.R;
+import in.compsgeek.javafy.tutorials.ch06_strings.Ch6_1_StringClass;
+import in.compsgeek.javafy.tutorials.ch06_strings.Ch6_2_StringMethods;
+import in.compsgeek.javafy.tutorials.ch06_strings.Ch6_3_StringBuffer;
+import in.compsgeek.javafy.tutorials.ch06_strings.Ch6_4_StringBuilder;
+import in.compsgeek.javafy.tutorials.ch06_strings.Ch6_5_StringBufferMethods;
+import in.compsgeek.javafy.tutorials.ch06_strings.Ch6_6_ChainedMethods;
 
 public class Ch06TutorialStrings extends AppCompatActivity {
 
@@ -141,7 +147,24 @@ public class Ch06TutorialStrings extends AppCompatActivity {
         public Fragment getItem(int position) {
             // getItem is called to instantiate the fragment for the given page.
             // Return a PlaceholderFragment (defined as a static inner class below).
-            return PlaceholderFragment.newInstance(position + 1);
+            switch (position) {
+                case 0:
+                    return new Ch6_1_StringClass();
+                case 1:
+                    return new Ch6_2_StringMethods();
+                case 2:
+                    return new Ch6_3_StringBuffer();
+                case 3:
+                    return new Ch6_4_StringBuilder();
+                case 4:
+                    return new Ch6_5_StringBufferMethods();
+                case 5:
+                    return new Ch6_6_ChainedMethods();
+
+
+                default:
+                    return null;
+            }
         }
 
         @Override
