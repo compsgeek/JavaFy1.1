@@ -75,7 +75,7 @@ public class Ch5_1_IOStreams extends Fragment {
         WebSettings webSettings = myWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
-        myWebView.loadUrl("http://www.javafy.in/ch5/streams.html");
+        myWebView.loadUrl("http://www.javafy.in/ch5/stream.html");
 
         return v;
     }

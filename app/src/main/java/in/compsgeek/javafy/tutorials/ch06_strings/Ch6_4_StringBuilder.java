@@ -7,6 +7,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebSettings;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 
 import in.compsgeek.javafy.R;
 
@@ -65,7 +68,16 @@ public class Ch6_4_StringBuilder extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_ch6_4__string_builder, container, false);
+
+        View v = inflater.inflate(R.layout.fragment_ch6_4__string_builder, container, false);
+        WebView myWebView = v.findViewById(R.id.webView);
+        myWebView.setWebViewClient(new WebViewClient());
+        WebSettings webSettings = myWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+        webSettings.setDomStorageEnabled(true);
+        myWebView.loadUrl("http://www.javafy.in/ch6/stringbuilder.html");
+
+        return v;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
