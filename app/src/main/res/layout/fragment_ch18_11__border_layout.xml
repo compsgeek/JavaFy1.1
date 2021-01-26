@@ -6,9 +6,25 @@
     tools:context=".tutorials.ch18_appsngui.Ch18_11_BorderLayout">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
+        <WebView
+            android:id="@+id/webView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingTop="115dp"
+            android:paddingRight="5dp"
+            android:paddingBottom="50dp"
+            android:text="" />
+
+    </LinearLayout>
 </FrameLayout>

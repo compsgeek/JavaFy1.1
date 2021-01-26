@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".tutorials.ch22_misc.Ch22_4_MockTest4">
+    tools:context=".tutorials.ch20_netjava.Ch20_8_UDP">
 
     <!-- TODO: Update blank fragment layout -->
     <LinearLayout
